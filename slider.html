@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <link rel="stylesheet" href="slider.css">
+</head><body>
+    <div class="slider">
+    <div class="slides">
+        <img src="1.jpg" alt="Slide 1">
+        <img src="2.jpg" alt="Slide 2">
+        <img src="3.jpg" alt="Slide 3">
+        <img src="4.jpg" alt="Slide 4">
+    </div>
+    <div class="controls">
+        <button class="prev">Previous</button>
+        <button class="next">Next</button>
+    </div>
+    <div class="pagination"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var currentSlide = 0;
+        var totalSlides = $('.slides img').length;
+
+        // Initialize pagination
+        for (var i = 0; i < totalSlides; i++) {
+            $('.pagination').append('<span class="dot"></span>');
+        }
+
+        // Show first slide and set active pagination
+        showSlide(currentSlide);
+
+        // Handle next button click
+        $('.next').click(function() {
+            currentSlide++;
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            showSlide(currentSlide);
+        });
+
+        // Handle previous button click
+        $('.prev').click(function() {
+            currentSlide--;
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+            showSlide(currentSlide);
+        });
+
+        // Handle pagination click
+        $('.pagination span').click(function() {
+            var dotIndex = $(this).index();
+            currentSlide = dotIndex;
+            showSlide(currentSlide);
+        });
+
+        // Function to display current slide
+        function showSlide(slideIndex) {
+            $('.slides img').hide().eq(slideIndex).fadeIn();
+            $('.pagination span').removeClass('active').eq(slideIndex).addClass('active');
+        }
+    });
+</script>
+</body>
+</html>

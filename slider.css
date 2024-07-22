@@ -1,0 +1,45 @@
+.slider {
+    position: relative;
+    width: 600px; /* Adjust width as needed */
+    margin: 0 auto;
+}
+
+.slides {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+}
+
+.controls {
+    margin-top: 10px;
+    text-align: center;
+    }
+
+.prev, .next {
+    padding: 8px 16px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pagination span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination span.active {
+    background-color: #333;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards with Modals</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for modal overflow handling -->
+    <style>
+        .modal-body {
+            max-height: calc(100vh - 210px);
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <img src="android.jpeg" class="card-img-top" alt="Product Image 1">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy A25 5g</h5>
+                    <p class="card-text">19,999/-</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalProduct1">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <img src="iphone.webp" class="card-img-top" alt="Product Image 2">
+                <div class="card-body">
+                    <h5 class="card-title">iphone 15 pro max</h5>
+                    <p class="card-text">1,50,000/-</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalProduct2">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more cards as needed -->
+    </div>
+</div>
+
+<!-- Modal for Product 1 -->
+<div class="modal fade" id="modalProduct1" tabindex="-1" role="dialog" aria-labelledby="modalProduct1Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalProduct1Label">Product 1 Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>The Galaxy A25 5G's 6.5-inch, Super AMOLED display expresses rich colors and details up to 1,000 nits brightness while enhanced with Vision Booster for clear outdoor visibility. Plus, the Eye Comfort Shield reduces harmful blue light so that your eyes are cared for day and night.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Product 2 -->
+<div class="modal fade" id="modalProduct2" tabindex="-1" role="dialog" aria-labelledby="modalProduct2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalProduct2Label">Product 2 Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>iPhone 15 Pro Max, we designed a 5x Telephoto camera with the longest optical zoom of any iPhone ever to fit in our compact Pro camera system. Now you can take sharper close‑ups from farther away — like a phenomenal photo of your friend or a goal in your kid's soccer match.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
